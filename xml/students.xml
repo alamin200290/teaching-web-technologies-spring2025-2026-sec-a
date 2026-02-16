@@ -1,0 +1,22 @@
+<students>
+    <student>
+        <id sr="a">12</id>
+        <name>alamin</name>
+        <email>alamin@aiub.edu</email>
+        <add>
+            <house>12</house>
+            <road>11</road>
+        </add>
+        <cgpa value="2.5"/>
+    </student>
+    <student>
+        <id sr="b">1</id>
+        <name>xyz</name>
+        <email>alamin@aiub.edu</email>
+        <add>
+            <house></house>
+            <road>13</road>
+        </add>
+        <cgpa value="3.0"/>
+    </student>
+</students>
