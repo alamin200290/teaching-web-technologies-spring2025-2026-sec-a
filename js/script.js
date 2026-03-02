@@ -56,3 +56,40 @@ btn.addEventListener('click', function(){
         msg.innerHTML = "";
     }
 })
+
+let move = document.getElementById('btn1');
+
+move.addEventListener('click', ()=>{
+
+    let d1 = document.getElementById('d1');
+
+    // for(let a=0; a<50;a++){ 
+    //     setTimeout(function(){
+    //         let current = window.getComputedStyle(d1).left;
+    //         if(current == ""){
+    //             current = "10px";
+    //         }else{
+    //             //let newPos = current.replace('px', '').trim();
+    //             current = parseInt(current)+10+"px";
+    //         }
+    //         d1.style.left = current;
+    //     }, 70* (a+1));
+    // }
+
+    let counter = 0;
+    let interval = setInterval(function(){
+        if(counter >10){
+            clearInterval(interval);
+        }else{
+            let current = window.getComputedStyle(d1).left;
+            if(current == ""){
+                current = "10px";
+            }else{
+                //let newPos = current.replace('px', '').trim();
+                current = parseInt(current)+10+"px";
+            }
+            d1.style.left = current;
+        }
+        counter++;
+    }, 200);
+});
