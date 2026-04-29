@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once('../model/userModel.php');
     if(isset($_POST['submit'])){
     $username = $_REQUEST['username'];
     $password = $_REQUEST['password'];
@@ -9,8 +10,13 @@
         echo "null username/password/email";
     }else{
         $user = ['username'=>$username, 'password'=>$password, 'email'=>$email];
-        $_SESSION['user'] =$user;
-        header('location: ../view/login.php');
+        $status = addUser($user);
+        if($status){
+            header('location: ../view/login.php');
+        }else{
+            header('location: ../view/signup.php');
+        }
+
     }
     }else{
         header('location: ../view/signup.php');
